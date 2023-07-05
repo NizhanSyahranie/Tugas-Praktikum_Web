@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktikum 9.1 </title>
+</head>
+<body>
+    <h1>Menghitung Luas dan Keliling Lingkaran</h1>
+
+    <span id="phi"></span>
+    <br>
+    <span id="jari"></span>
+    <br>
+    <span id="luas"></span>
+    <br>
+    <span id="keliling"></span>
+
+    <!--kode java script -->
+
+    <script type="text/javascript">
+
+        const phi = 3.14
+
+        // buat variabel jari-jari
+
+        let r = 14;
+        // rumus lingkaran
+        let L = phi * (r * r);
+
+        // rumus keliling lingkaran
+        let K = phi * (2*r);
+
+        document.getElementById("phi").innerHTML = "Phi : " + phi;
+        document.getElementById("jari").innerHTML = "Jari-jari : " + r;
+        document.getElementById("luas").innerHTML =  "luas lingkaran : " + L;
+        document.getElementById("keliling").innerHTML = "keliling lingkaran : " + K; 
+        </script>
+    
+</body>
+</html>

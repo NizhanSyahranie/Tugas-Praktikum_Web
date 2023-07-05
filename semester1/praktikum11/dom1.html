@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>akses element</title>
+</head>
+<body>
+    <h1>Belajar DOM Javascript</h1>
+
+    <div id="box1"></div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        //akes by id // id cuma bisa di pakai 1x
+        let box = document.getElementById("box1")
+        document.getElementById("box1").innerHTML = "praktikumweb11";
+
+        //akes by class
+        let boxes = document.getElementsByClassName("boxes");
+        // index []
+        boxes[0].innerHTML = "Basic";
+        boxes[1].innerHTML = "Advance";
+        boxes[2].innerHTML = "Expert";
+
+        // akses by tag
+        let list = document.getElementsByTagName("li")
+        list[0].innerHTML = "Python";
+        list[1].innerHTML = "PHP";
+        list[2].innerHTML = "Java";
+
+    </script>
+</body>
+</html>

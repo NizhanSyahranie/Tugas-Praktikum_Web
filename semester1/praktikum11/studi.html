@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dark Mode</title>
+</head>
+<body>
+    <h2>Dark Mode</h2>
+    <button>Click It!</button>
+
+    <script>
+        let btn = document.querySelector("button");
+        let body = document.querySelector("body");
+        let darkmode = true ;
+
+        // event listener
+        btn.addEventListener("click",function(){
+            if (darkmode == true) {
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+                btn.innerHTML = "mode terang";
+                darkmode = false;
+            } else {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+                btn.innerHTML = "mode gelap";
+                darkmode = true;
+            }
+        });
+
+    </script>
+</body>
+</html>

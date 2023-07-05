@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Batu, Gunting, Kertas</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Beat Me !</h1>
+      <div class="choice-buttons">
+        <button class="choice-button" onclick="playRound('batu')">
+          <img src="batu.png" width="100" alt="Batu">
+          <br>
+        </button>
+        <button class="choice-button" onclick="playRound('gunting')">
+          <img src="gunting.png" width="100" alt="Gunting">
+          <br>
+        </button>
+        <button class="choice-button" onclick="playRound('kertas')">
+          <img src="kertas.png" width="100" alt="Kertas">
+          <br>
+        </button>
+      </div>
+      <p id="result"></p>
+    </div>
+    <script src="sistem.js"> </script>
+  </body>
+</html>

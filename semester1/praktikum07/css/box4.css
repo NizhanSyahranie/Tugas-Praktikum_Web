@@ -1,0 +1,52 @@
+.container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+/*baris 1*/
+
+/*anak 1 : Kolom Kuning*/
+.container .kotak:nth-child(1){
+	background-color: yellow;
+	width:20%;
+}
+
+/*anak 2 : Kolom Merah*/
+.container .kotak:nth-child(2){
+	background-color: red;
+	width:79%;
+}
+
+/*Baris 2*/
+
+.container .isi:nth-child(1){
+	background-color: lightgreen;
+	width:20%;
+}
+
+.container .isi:nth-child(2){
+	background-color: lightgrey;
+	width:58%;
+}
+
+.container .isi:nth-child(3){
+	background-color: aqua;
+	width:20%;
+}
+
+.kotak {
+	height: 100px
+}
+
+.isi{
+	height: 600px
+}
+
+.kotak-bawah{
+	background-color: lightblue;
+	width:100%;
+	margin-top: 10px;
+	height: 100px;
+}

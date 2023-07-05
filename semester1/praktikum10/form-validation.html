@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi</title>
+
+    <style>
+        .danger {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="myForm" autocomplete="off">
+        <label for="nama">Nama</label>
+        <input type="text" name="nama" id="nama" placeholder="Masukan nama">
+        <small class="danger" id="errNama"></small>
+        <br>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="Masukan email">
+        <small class="danger" id="errEmail"></small>
+        <br>
+
+        <label for="jam">Jam Keberangkatan</label>
+        <input type="time" name="jam" id="jam">
+        <small class="danger" id="errJam"></small>
+        <br>
+
+        <label for="tujuan">Tujuan</label>
+        <input type="text" name="tujuan" id="tujuan" placeholder="Masukan tujuan Keberangkatan">
+        <small class="danger" id="errTujuan"></small>
+        <br>
+
+        <label for="tiket">Jumlah Tiket</label>
+        <input type="number" name="tiket" id="tiket" value="1" min="1" max="10" placeholder="Masukan tiket">
+        <small class="danger" id="errTiket"></small>
+        <br>
+
+        <button type="button" onclick="validateForm()">Simpan</button>
+    </form>
+
+    <div id="tampilData" style="display: none;">
+        <h2>Data Pelanggan</h2>
+        <span>Nama: </span> <span id="tampilNama">Nama</span><br>
+        <span>Email: </span> <span id="tampilEmail">Email</span><br>
+        <span>Jam Keberangkatan: </span> <span id="tampilJam">Jam Keberangkatan</span><br>
+        <span>Tujuan: </span> <span id="tampilTujuan">Tujuan</span><br>
+        <span>Jumlah Tiket: </span> <span id="tampilTiket">Jumlah Tiket</span><br>
+    </div>
+
+    <script>
+        function validateForm() {
+            let nama = document.getElementById("nama").value;
+
+            let email = document.getElementById("email").value;
+            atpos = email.indexOf("@");
+            dotpos = email.lastIndexOf(".");
+
+            let jam = document.getElementById("jam").value;
+            let tujuan = document.getElementById("tujuan").value;
+            let tiket = document.getElementById("tiket").value;
+
+            let status = true;
+
+
+            if (nama == "") {
+                document.getElementById("errNama").innerHTML = "Input nama tidak boleh kosong";
+                status = false;
+            } else if (nama.length > 30) {
+                document.getElementById("errNama").innerHTML = "Karakter tidak boleh lebih dari 30 karakter";
+                status = false;
+            } else {
+                document.getElementById("errNama").innerHTML = "";
+                status = true;
+            }
+
+            if (email == "") {
+                document.getElementById("errEmail").innerHTML = "Input email tidak boleh kosong";
+                status = false;
+            } else if (atpos < 1 || (dotpos - atpos < 2)) {
+                document.getElementById("errEmail").innerHTML = "Format email tidak sesuai";
+                status = false;
+            } else {
+                document.getElementById("errEmail").innerHTML = "";
+                status = true;
+            }
+
+            if (jam == "") {
+                document.getElementById("errJam").innerHTML = "Input jam tidak boleh kosong";
+                status = false;
+            } else {
+                document.getElementById("errJam").innerHTML = "";
+                status = true;
+            }
+
+            if (tujuan == "") {
+                document.getElementById("errTujuan").innerHTML = "Input tujuan tidak boleh kosong";
+                status = false;
+            } else {
+                document.getElementById("errTujuan").innerHTML = "";
+                status = true;
+            }
+
+            if (tiket == 0) {
+                document.getElementById("errTiket").innerHTML = "Input tiket tidak boleh kosong";
+                status = false;
+            } else if (tiket < 1 || tiket > 10) {
+                document.getElementById("errTiket").innerHTML = "Jumlah tiket tidak memenuhi syarat";
+                status = false;
+            } else {
+                document.getElementById("errTiket").innerHTML = "";
+            }
+
+            if(status == true) {
+                document.getElementById("tampilData").setAttribute('style', 'display:block')
+                document.getElementById("tampilNama").innerHTML = nama;
+                document.getElementById("tampilEmail").innerHTML = email;
+                document.getElementById("tampilJam").innerHTML = jam;
+                document.getElementById("tampilTujuan").innerHTML = tujuan;
+                document.getElementById("tampilTiket").innerHTML = tiket;
+            } else {
+                document.getElementById("tampilData").setAttribute('style', 'display:none')
+            }
+
+        }
+    </script>
+</body>
+
+</html>

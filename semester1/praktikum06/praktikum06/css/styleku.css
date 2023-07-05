@@ -1,0 +1,48 @@
+body{
+    background-color: bisque;
+    font-family: 'Lucida Sans',;
+}
+
+/* Untuk Mengubah Style Header */
+
+#header{
+    background-color: burlywood;
+    text-align: center;
+    padding: 10px;
+}
+
+#header h1{
+    color: blue;
+}
+
+#header blockquote{
+    border: 1px dotted black;
+    background-color: orange;
+}
+
+/* untuk mengubah style menu */
+.menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gambar{
+    text-align: center;
+}
+
+.gambar img{
+    width: 25%;
+}
+.koleksi{
+    text-align: center;
+}
+.koleksi img{
+    width: 20%;
+}
+
+.promo{
+    color: red;
+    text-align: center;
+}

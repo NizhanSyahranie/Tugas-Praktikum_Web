@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <style>
+        .select-animal {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select name="" id="selAnimal" class="select-animal" onchange="imgPicker()">
+        <option value="" hidden>---Pilih---</option>
+        <option value="elang">Elang</option>
+        <option value="gorila">Gorila</option>
+        <option value="singa">Singa</option>
+        <option value="burung">Burung</option>
+        <option value="cheetah">Cheetah</option>
+    </select>
+
+    <br>
+    <img id="img" alt="" width="500">
+
+    <script>
+        function imgPicker() {
+
+            let select = document.getElementById("selAnimal").value;
+            let image = document.getElementById("img");
+
+            if (select == "elang") {
+                image.src = "assets/img/elang.jpg";
+                alert(image.getAttribute("src").split("/").reverse()[0]);
+            } else if (select == "gorila") {
+                image.src = "assets/img/gorila.jpg";
+                alert(image.getAttribute("src").split("/").reverse()[0]);
+            } else if (select == "singa") {
+                image.src = "assets/img/singa.jpg";
+                alert(image.getAttribute("src").split("/").reverse()[0]);
+            } else if (select == "burung") {
+                image.src = "assets/img/burung.png";
+                alert(image.getAttribute("src").split("/").reverse()[0]);
+            } else if (select == "cheetah") {
+                image.src = "assets/img/cheetah.jpg";
+                alert(image.getAttribute("src").split("/").reverse()[0]);
+            } else {
+                console.log("Tidak ada gambar");
+            }
+        }   
+    </script>
+</body>
+
+</html>

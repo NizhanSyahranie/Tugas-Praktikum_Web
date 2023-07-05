@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kurs Mata Uang</title>
+</head>
+
+<body>
+    <form autocomplete="off">
+        <fieldset>
+            <legend>Kurs Rupiah - Mata Uang Asing</legend>
+            <table border="1">
+                <thead>
+                    <th>Masukan Nilai</th>
+                    <th>Valas</th>
+                    <th>Nilai Rupiah</th>
+                </thead>
+                <tbody>
+                    <td>
+                        <input type="number" id="uang" onchange="kurs()">
+                    </td>
+                    <td>
+                        <select name="" id="pilihan" onchange="kurs()">
+                            <option value="" hidden>---Pilih---</option>
+                            <option value="usd">Dolar US</option>
+                            <option value="sd">Dolar Singapore</option>
+                            <option value="rm">Ringgit Malaysia</option>
+                            <option value="yen">Yen Jepang</option>
+                            <option value="eu">Euro</option>
+                            <option value="riyal">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" id="konversi" readonly/>
+                    </td>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        function kurs() {
+            let inp_uang = document.getElementById("uang").value;
+            let mata_uang = document.getElementById("pilihan").value;
+            let span_konversi;
+
+            if (mata_uang == "usd") {
+                span_konversi = inp_uang * 15607;
+                document.getElementById("konversi").value = span_konversi;
+            } else if (mata_uang == "sd") {
+                span_konversi = inp_uang * 11678;
+                document.getElementById("konversi").value = span_konversi;
+            } else if (mata_uang == "rm") {
+                span_konversi = inp_uang * 3544;
+                document.getElementById("konversi").value = span_konversi;
+            } else if (mata_uang == "yen") {
+                span_konversi = inp_uang * 118;
+                document.getElementById("konversi").value = span_konversi;
+            } else if (mata_uang == "eu") {
+                span_konversi = inp_uang * 16642;
+                document.getElementById("konversi").value = span_konversi;
+            } else if (mata_uang == "riyal") {
+                span_konversi = inp_uang * 4152;
+                document.getElementById("konversi").value = span_konversi;
+            } else {
+                span_konversi = "Anda tidak memilih";
+                document.getElementById("konversi").value = span_konversi;
+            }
+        }
+    </script>
+</body>
+
+</html>
